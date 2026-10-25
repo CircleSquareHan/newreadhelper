@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Into the Wild · 伴读</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button id="tocToggle" class="icon-button" aria-label="章节目录">☰</button>
+    <div class="book-mark"><span>JON KRAKAUER</span><strong>INTO THE WILD</strong></div>
+    <div class="top-actions">
+      <button id="themeToggle" class="small-button" title="切换深色模式">☾</button>
+      <button id="vocabHint" class="small-button" title="点击单词或选择短语即可查词">查词提示</button>
+    </div>
+  </header>
+
+  <aside id="toc" class="toc" aria-label="章节目录">
+    <div class="toc-heading"><span>目录</span><button id="tocClose" class="plain-button">×</button></div>
+    <label class="search"><span>⌕</span><input id="chapterSearch" placeholder="搜索章节或标题"></label>
+    <nav id="chapterList"></nav>
+    <p class="toc-tip">阅读位置会自动保存到此浏览器。</p>
+  </aside>
+
+  <main id="reader" class="reader" tabindex="-1">
+    <article id="book" class="book" aria-live="polite"></article>
+    <footer class="pager"><button id="previous" class="nav-button">← 上一章</button><span id="progress"></span><button id="next" class="nav-button">下一章 →</button></footer>
+  </main>
+
+  <section id="translationPopup" class="translation-popup" aria-live="polite" aria-label="词语释义" hidden>
+    <div class="popup-topline"><span class="popup-label">快速释义</span><button id="popupClose" class="popup-close" aria-label="关闭释义">×</button></div>
+    <strong id="lookupTerm" class="popup-term"></strong>
+    <div id="definition" class="popup-definition"></div>
+    <button id="copyTerm" class="popup-copy" disabled>复制词语</button>
+  </section>
+
+  <template id="loading"><div class="loading">正在整理书页…</div></template>
+  <script src="app.js"></script>
+</body>
+</html>
